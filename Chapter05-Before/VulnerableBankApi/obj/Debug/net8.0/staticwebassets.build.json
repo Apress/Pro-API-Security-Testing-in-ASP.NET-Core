@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dUSCnuWGeLBeii0MzhqR3mbtu92SAhKomQlZangKbwQ=",
+  "Source": "VulnerableBankApi",
+  "BasePath": "_content/VulnerableBankApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

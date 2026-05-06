@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  vulnerablebankapi:
+    image: vulnerablebankapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Database=VulnerableBankDB;Username=postgres;Password=YourStrong@Passw0rd;
+      - ASPNETCORE_URLS=http://+:5000
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "YourStrong@Passw0rd"
+      POSTGRES_DB: VulnerableBankDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
